@@ -11,12 +11,12 @@ class Main {
         // There is thread interference
 
         t1.start();
-        t1.join();
         t2.start();
+
+        t1.join();
         t2.join();
 
-        // Terminated the first thread before the 2nd thread starts will solve issue
-        
+
         System.out.println(counter.getCount());
     }
 }
